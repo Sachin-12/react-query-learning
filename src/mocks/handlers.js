@@ -2,27 +2,27 @@ import { rest } from "msw";
 
 export const handlers = [
   rest.get("/kollywood-actors", (req, res, ctx) => {
-    return res.json(
+    return res(
       ctx.status(200),
       ctx.json({
         result: [
           {
             id: 1,
             name: "Ilaya Thalapathy",
-            alterEgo: "Vijay"
+            alterEgo: "Vijay",
           },
           {
             id: 2,
             name: "Superstar",
-            alterEgo: "Rajinikanth"
+            alterEgo: "Rajinikanth",
           },
           {
-            id: 1,
+            id: 3,
             name: "Thala",
-            alterEgo: "Ajith Kumar"
-          }
-        ]
+            alterEgo: "Ajith Kumar",
+          },
+        ],
       })
     );
-  })
+  }),
 ];

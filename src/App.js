@@ -8,7 +8,7 @@ const history = createBrowserHistory();
 export default function App() {
   return (
     <BrowserRouter history={history}>
-      <Routing />;
+      <Routing />
     </BrowserRouter>
   );
 }

@@ -8,7 +8,7 @@ const KollywoodActors = (props) => {
   useEffect(() => {
     axios.get("/kollywood-actors").then((data) => {
       console.log(data);
-      setData(data);
+      setData(data.data.result);
       setIsLoading(false);
     });
   }, []);
