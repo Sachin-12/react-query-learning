@@ -9,20 +9,28 @@ export const handlers = [
           {
             id: 1,
             name: "Ilaya Thalapathy",
-            alterEgo: "Vijay",
+            alterEgo: "Vijay"
           },
           {
             id: 2,
             name: "Superstar",
-            alterEgo: "Rajinikanth",
+            alterEgo: "Rajinikanth"
           },
           {
             id: 3,
             name: "Thala",
-            alterEgo: "Ajith Kumar",
-          },
-        ],
+            alterEgo: "Ajith Kumar"
+          }
+        ]
       })
     );
   }),
+  rest.get("/kollywood-actors1", (req, res, ctx) => {
+    return res(
+      ctx.status(404),
+      ctx.json({
+        message: "404 page not found"
+      })
+    );
+  })
 ];
