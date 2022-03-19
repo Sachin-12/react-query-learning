@@ -12,6 +12,7 @@ const KollywoodActors = (props) => {
       setIsLoading(false);
     });
   }, []);
+
   return (
     <>
       {isLoading && <p>Loading..</p>}

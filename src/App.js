@@ -1,14 +1,16 @@
-import { createBrowserHistory } from "history";
+import { QueryClient, QueryClientProvider } from "react-query";
 import { BrowserRouter } from "react-router-dom";
 import Routing from "./routing/Routing";
 import "./styles.css";
 
-const history = createBrowserHistory();
+const queryClient = new QueryClient();
 
 export default function App() {
   return (
-    <BrowserRouter history={history}>
-      <Routing />
-    </BrowserRouter>
+    <QueryClientProvider client={queryClient}>
+      <BrowserRouter>
+        <Routing />
+      </BrowserRouter>
+    </QueryClientProvider>
   );
 }
