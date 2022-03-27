@@ -6,6 +6,11 @@ const KollywoodActors = (props) => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState("");
 
+  // Network data is not cached
+  useEffect(() => {
+    console.log(`without RQ ${isLoading}`);
+  }, [isLoading]);
+
   useEffect(() => {
     axios
       .get("/kollywood-actors") // make path as "/kollywood-actors1" to return 404 error
