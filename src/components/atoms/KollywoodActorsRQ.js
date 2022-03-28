@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { useQuery } from "react-query";
 
 const fetchKollywoodActors = () => {
@@ -15,7 +16,7 @@ const KollywoodActorsRQ = () => {
 
   const filterTeamName = (data) =>
     data?.data?.result?.map((actor) => {
-      return { name: actor.name, id: actor.id };
+      return { name: actor?.name, id: actor?.id };
       // Now. This is how the data looks from useQuery()
       // [{
       //   "name": "Ilaya Thalapathy",
@@ -72,7 +73,9 @@ const KollywoodActorsRQ = () => {
           <li key={actor.id}>{actor.name}</li>
         ))} */}
         {data?.map((actor) => (
-          <li key={actor.id}>{actor.name}</li>
+          <li>
+            <Link to={`/kollywood-actor/${actor.id}`}>{actor.name}</Link>
+          </li>
         ))}
       </ul>
       <button onClick={refetch}>Load data </button>

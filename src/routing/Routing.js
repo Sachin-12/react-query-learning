@@ -1,4 +1,5 @@
 import { Link, Route, Routes } from "react-router-dom";
+import KollywoodActor from "../components/atoms/KollywoodActor";
 import KollywoodActors from "../components/atoms/KollywoodActors";
 import KollywoodActorsRQ from "../components/atoms/KollywoodActorsRQ";
 
@@ -22,6 +23,7 @@ const Routing = (props) => {
           path="/kollywood-actors-rq"
           element={<KollywoodActorsRQ />}
         />
+        <Route exact path="/kollywood-actor/:id" element={<KollywoodActor />} />
       </Routes>
     </>
   );

@@ -32,5 +32,36 @@ export const handlers = [
         message: "404 page not found"
       })
     );
+  }),
+  rest.get("/kollywood-actor/:id", (req, res, ctx) => {
+    const { id } = req.params;
+    if (id === "1") {
+      return res(
+        ctx.status(200),
+        ctx.json({
+          id: 1,
+          name: "Ilaya Thalapathy",
+          alterEgo: "Vijay"
+        })
+      );
+    } else if (id === "2") {
+      return res(
+        ctx.status(200),
+        ctx.json({
+          id: 2,
+          name: "Superstar",
+          alterEgo: "Rajinikanth"
+        })
+      );
+    } else if (id === "3") {
+      return res(
+        ctx.status(200),
+        ctx.json({
+          id: 3,
+          name: "Thala",
+          alterEgo: "Ajith Kumar"
+        })
+      );
+    }
   })
 ];
