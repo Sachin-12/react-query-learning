@@ -63,5 +63,18 @@ export const handlers = [
         })
       );
     }
+  }),
+  rest.get("/movies/actor/:name", (req, res, ctx) => {
+    const { name } = req.params;
+    if (name === "Vijay") {
+      return res(
+        ctx.status(200),
+        ctx.json({
+          id: 1,
+          name: "Vijay",
+          movies: ["Beast", "Ghilli", "Kadhaluku Mariyathai"]
+        })
+      );
+    }
   })
 ];

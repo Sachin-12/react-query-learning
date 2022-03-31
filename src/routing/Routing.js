@@ -1,4 +1,5 @@
 import { Link, Route, Routes } from "react-router-dom";
+import DependentQueries from "../components/atoms/DependentQueries";
 import DynamicQueries from "../components/atoms/DynamicQueries";
 import KollywoodActor from "../components/atoms/KollywoodActor";
 import KollywoodActors from "../components/atoms/KollywoodActors";
@@ -22,6 +23,9 @@ const Routing = (props) => {
           <li>
             <Link to="/dynamic-queries">Dynamic Queries</Link>
           </li>
+          <li>
+            <Link to="/dependent-queries/1">Dependent Queries</Link>
+          </li>
         </ul>
       </nav>
       <Routes>
@@ -37,6 +41,11 @@ const Routing = (props) => {
           exact
           path="/dynamic-queries"
           element={<DynamicQueries ids={[1, 2, 3]} />}
+        />
+        <Route
+          exact
+          path="/dependent-queries/:id"
+          element={<DependentQueries />}
         />
       </Routes>
     </>
