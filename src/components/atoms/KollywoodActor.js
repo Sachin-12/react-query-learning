@@ -1,11 +1,17 @@
 import { useParams } from "react-router-dom";
-import useQueryActorById from "../../hooks/useQueryActorById";
+import useInitialQueryData from "../../hooks/useInitialQueryData";
+// import useQueryActorById from "../../hooks/useQueryActorById";
 
 const KollywoodActor = () => {
   const { id } = useParams();
-  const { data, isFetching } = useQueryActorById(id);
+  // const { data, isFetching } = useQueryActorById(id);
+  const { data, isLoading } = useInitialQueryData(id);
 
-  if (isFetching) {
+  // if (isFetching) {
+  //   return <p> Loading ... </p>;
+  // }
+
+  if (isLoading) {
     return <p> Loading ... </p>;
   }
 

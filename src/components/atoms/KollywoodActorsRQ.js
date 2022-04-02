@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useQuery } from "react-query";
 
-const fetchKollywoodActors = () => {
+export const fetchKollywoodActors = () => {
   return axios.get("/kollywood-actors"); // make path as "/kollywood-actors1" to return 404 error
 };
 const KollywoodActorsRQ = () => {
@@ -64,22 +64,23 @@ const KollywoodActorsRQ = () => {
     return <h1>{error.message}</h1>;
   } else if (isFetching || isLoading) {
     return <p> Loading </p>;
-  }
-  return (
-    <>
-      <h2> Fetching kollywood actors details using react query </h2>
-      <ul>
-        {/* {data?.data?.result.map((actor) => (
+  } else {
+    return (
+      <>
+        <h2> Fetching kollywood actors details using react query </h2>
+        <ul>
+          {/* {data?.data?.result.map((actor) => (
           <li key={actor.id}>{actor.name}</li>
         ))} */}
-        {data?.map((actor) => (
-          <li>
-            <Link to={`/kollywood-actor/${actor.id}`}>{actor.name}</Link>
-          </li>
-        ))}
-      </ul>
-      <button onClick={refetch}>Load data </button>
-    </>
-  );
+          {data?.map((actor) => (
+            <li>
+              <Link to={`/kollywood-actor/${actor.id}`}>{actor.name}</Link>
+            </li>
+          ))}
+        </ul>
+        <button onClick={refetch}>Load data </button>
+      </>
+    );
+  }
 };
 export default KollywoodActorsRQ;
