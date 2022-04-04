@@ -76,5 +76,79 @@ export const handlers = [
         })
       );
     }
+  }),
+  rest.get("/cartoons", (req, res, ctx) => {
+    const pageNum = req.url.searchParams.get("pageNum");
+    if (pageNum === "1") {
+      return res(
+        ctx.status(200),
+        ctx.json([
+          {
+            id: 1,
+            name: `Dexter's Laboratory`
+          },
+          {
+            id: 2,
+            name: `Tom & Jerry`
+          }
+        ])
+      );
+    } else if (pageNum === "2") {
+      return res(
+        ctx.status(200),
+        ctx.json([
+          {
+            id: 3,
+            name: `Swat Kats`
+          },
+          {
+            id: 4,
+            name: `Scooby Doo`
+          }
+        ])
+      );
+    } else if (pageNum === "3") {
+      return res(
+        ctx.status(200),
+        ctx.json([
+          {
+            id: 5,
+            name: `Powerpuff Girls`
+          },
+          {
+            id: 6,
+            name: `Jackie Chan adventures`
+          }
+        ])
+      );
+    } else if (pageNum === "4") {
+      return res(
+        ctx.status(200),
+        ctx.json([
+          {
+            id: 7,
+            name: `Pokemon`
+          },
+          {
+            id: 8,
+            name: `Dragon Ball Z`
+          }
+        ])
+      );
+    } else if (pageNum === "5") {
+      return res(
+        ctx.status(200),
+        ctx.json([
+          {
+            id: 9,
+            name: `Bey Blade`
+          },
+          {
+            id: 10,
+            name: `Ben 10`
+          }
+        ])
+      );
+    }
   })
 ];

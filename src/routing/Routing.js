@@ -5,6 +5,7 @@ import KollywoodActor from "../components/atoms/KollywoodActor";
 import KollywoodActors from "../components/atoms/KollywoodActors";
 import KollywoodActorsRQ from "../components/atoms/KollywoodActorsRQ";
 import ParallelQueries from "../components/atoms/ParallelQeries";
+import PaginatedQuery from "../components/atoms/PaginatedQuery";
 
 const Routing = (props) => {
   return (
@@ -25,6 +26,9 @@ const Routing = (props) => {
           </li>
           <li>
             <Link to="/dependent-queries/1">Dependent Queries</Link>
+          </li>
+          <li>
+            <Link to="/paginated-query">Paginated Query</Link>
           </li>
         </ul>
       </nav>
@@ -47,6 +51,7 @@ const Routing = (props) => {
           path="/dependent-queries/:id"
           element={<DependentQueries />}
         />
+        <Route exact path="/paginated-query" element={<PaginatedQuery />} />
       </Routes>
     </>
   );
