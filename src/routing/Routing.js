@@ -6,6 +6,7 @@ import KollywoodActors from "../components/atoms/KollywoodActors";
 import KollywoodActorsRQ from "../components/atoms/KollywoodActorsRQ";
 import ParallelQueries from "../components/atoms/ParallelQeries";
 import PaginatedQuery from "../components/atoms/PaginatedQuery";
+import InfiniteQueries from "../components/atoms/InfiniteQueries";
 
 const Routing = (props) => {
   return (
@@ -30,6 +31,9 @@ const Routing = (props) => {
           <li>
             <Link to="/paginated-query">Paginated Query</Link>
           </li>
+          <li>
+            <Link to="/infinite-queries">Infinite Queries</Link>
+          </li>
         </ul>
       </nav>
       <Routes>
@@ -52,6 +56,7 @@ const Routing = (props) => {
           element={<DependentQueries />}
         />
         <Route exact path="/paginated-query" element={<PaginatedQuery />} />
+        <Route exact path="/infinite-queries" element={<InfiniteQueries />} />
       </Routes>
     </>
   );
