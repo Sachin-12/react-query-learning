@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Fragment } from "react";
+import { Fragment, useEffect } from "react";
 import { useInfiniteQuery } from "react-query";
 
 const fetchCartoons = ({ pageParam = 1 }) => {
@@ -25,6 +25,7 @@ const InfiniteQueries = () => {
       }
     }
   });
+
   if (isFetching && !isFetchingNextPage) {
     return <p> Loading... </p>;
   }
